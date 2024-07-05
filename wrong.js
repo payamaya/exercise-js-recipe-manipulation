@@ -55,3 +55,19 @@ ulElement.appendChild(addToList)
 
 const removeBoxShadow = document.querySelector('.shadow')
 removeBoxShadow.style.boxShadow = 'none'
+
+// 13) Two list elements of the list of instructions are incorrect. Find them and change them to the correct ones.
+
+// nr:2  <li> Separera ägggulor och äggvitor. Äggvitorna lägger du i en stor bunke, äggulorna i enliten bunke. </li>
+
+// nr: 9 <li>Ställ in i frysen över natten.</li>
+
+const instructionsList = document.querySelector('.instructions-list')
+
+const listItems = instructionsList.querySelectorAll('li')
+
+if (listItems.length >= 2) {
+  listItems[1].textContent =
+    '  Separera ägggulor och äggvitor. Äggvitorna lägger du i en stor bunke, äggulorna i en liten bunke.'
+  listItems[listItems.length - 2].textContent = 'Ställ in i frysen över natten.'
+}
