@@ -46,3 +46,11 @@ console.log(ingredients.length)
 console.log(ingredients[3].innerHTML)
 
 // 8) Create an an array of objects from the instructions. Each element in the array should be an object that looks like this:
+const instructioList = document.querySelectorAll('.instructions-list li')
+const instructionArray = Array.from(instructioList).map(
+  (instruction, index) => ({
+    order: index + 1,
+    text: instruction,
+  })
+)
+console.log(instructionArray)
