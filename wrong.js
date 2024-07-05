@@ -23,23 +23,33 @@ const bgColorIngredient = document.querySelector('.ingredients-container')
 bgColorIngredient.style.backgroundColor = '#f9f9f9'
 
 // 9)The ingredients are divided in to two parts, one for the bottom and one for the paste. In the list of the ingredients to the bottom, there is a text instead of two list items. Remove the text and add those two list items.
-// Select the <ul> element containing ingredients for the bottom
-const bottomIngredientsList = document.querySelector('.ingredients-list-bottom')
 
-// Remove the existing <p> element containing the placeholder text
+const bottomIngredientsList = document.querySelector('.ingredients-list-bottom')
 const textElement = bottomIngredientsList.querySelector('p')
 bottomIngredientsList.removeChild(textElement)
 
-// Create new <li> elements for the bottom ingredients
 const newItem1 = document.createElement('li')
 newItem1.textContent = '15st digistivetex'
-
 const newItem2 = document.createElement('li')
 newItem2.textContent = 'Lite smör'
 
-// Append the new <li> elements to the bottom ingredients list
 bottomIngredientsList.appendChild(newItem1)
 bottomIngredientsList.appendChild(newItem2)
+
+// 10) The third ingredient in the list of ingredients to the paste is wrong. Change that specific ingredient to the correct one.
+const listItem = document.querySelector('.ingredients-list-paste').children[2]
+const changeIngredients = document.createTextNode('3tsk vaniljsocker')
+listItem.replaceChild(changeIngredients, listItem.childNodes[0])
+
+// 11) There is also a missing ingredient in the list of ingredients to the paste. Look and see what it is and add that one the the end of the list.
+
+const ulElement = document.querySelector('.ingredients-list-paste')
+
+const addToList = document.createElement('li')
+
+addToList.innerText = '400g naturell philadelphiaost'
+
+ulElement.appendChild(addToList)
 
 // 12)The text "Instructions" to the left, beneath the image, has some shadow styling applied to it. Remove that styling.
 
